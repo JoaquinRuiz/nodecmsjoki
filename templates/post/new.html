@@ -1,0 +1,27 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Node CMS Joki</title>
+    <meta name="description" content="Node CMS Joki">
+    <meta name="author" content="Joaquin Ruiz">
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+<body>
+<h1>New Post</h1>
+<form method="post" action="/post" id="new_post" class="new_post">
+    <label for="post_title">Title</label><br />
+        <input type="text" name="title" id="post_title" size="30" />
+    <hr/>
+    <label for="post_content">Content</label><br />
+        <textarea name="content" cols="40" rows="20" id="post_content">
+        </textarea>
+    <hr/>
+    <input type="submit" value="Create Post" id="post_submit" />
+</form>
+<script src="js/scripts.js"></script>
+</body>
+</html>
