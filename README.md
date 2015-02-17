@@ -4,17 +4,16 @@ CMS using NodeJS, as proof of concepts for myself.
 Comments and ideas are welcomed.
 
 Components:
-- NodeJS
-- http
-- fs
-- url
+- Express
+- Jade
+- Mongoose
 
 ### Created
 12 Feb. 2015
 
 
 ### Comments
-
+Basic blog-CMS with admin area
 
 ### Last changes
-12 Feb. 2015
+17 Feb. 2015
