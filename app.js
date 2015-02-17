@@ -2,15 +2,25 @@
 // Module dependencies
 var express = require('express');
 var http = require('http');
-var fs = require('fs');
-var url = require('url');
-var qs = require('querystring');
+var mongoose = require('mongoose');
+var session = require('express-session')
+var bodyParser = require('body-parser')
 
 // configure app
 var app  = express();
+mongoose.connect('mongodb://localhost/nodecmsjoki');
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
+app.use(session({
+    secret : 'nooneknowsthis'
+}));
+app.use(function(req, res, next){
+    res.locals.session = req.session;
+    next();
+});
+app.use(bodyParser.urlencoded({ extended: false }));
+
 
 // Routes
 require('./routes')(app);

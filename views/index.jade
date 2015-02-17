@@ -4,3 +4,13 @@ html(lang="en")
         title= nodecmsjoki
     body
         h1 CMS joki in Node!! :D
+        -if(session.user)
+            div#logoutsection.pull-right
+                a#logout-btn.btn.btn-info.pull-right.top-bar-form-button(href='/logout') Logout
+                p#loginprompt.pull-right.login-prompt #{session.user.username}
+                    small logged In
+        -else
+            form.pull-right.form-horizontal.top-bar-form(method="post", id="loginForm", action="/login")
+                input.input-small.top-bar-form-textbox(id="username", type="text", name="User", placeholder="Username")
+                input.input-small.top-bar-form-textbox(id="password", type="password", name="Password", placeholder="Password")
+                button.btn.btn-primary.top-bar-form-button(type="submit", value="Sign In") Sign In
