@@ -1,0 +1,25 @@
+head
+    title= nodecmsjoki
+body
+    h1 CMS joki in Node!! :D
+    -if(session.user)
+        div
+            a(href='/logout') Logout
+            span  - #{ session.user.username }
+                small  logged In
+    -else
+        form(method="post", id="loginForm", action="/login")
+            input(id="username", type="text", name="User", placeholder="Username")
+            input(id="password", type="password", name="Password", placeholder="Password")
+            button(type="submit", value="Sign In") Sign In
+    ul
+        li
+            a(href='/') Home
+        li
+            a(href='/about') About us
+        li
+            a(href='/contact') Contact us
+        -if(session.user)
+            li
+                a(href='/admin') Admin
+    hr
